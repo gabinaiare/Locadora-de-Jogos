@@ -1,4 +1,4 @@
 package br.com.locadora.repository;
 
-public class ClienteRepository {
+public interface ClienteRepository {
 }

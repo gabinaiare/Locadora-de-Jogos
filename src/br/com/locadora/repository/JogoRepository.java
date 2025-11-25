@@ -1,4 +1,4 @@
 package br.com.locadora.repository;
 
-public class JogoRepository {
+public interface JogoRepository {
 }

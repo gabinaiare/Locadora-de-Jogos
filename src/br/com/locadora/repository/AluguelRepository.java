@@ -1,4 +1,6 @@
 package br.com.locadora.repository;
 
-public class AluguelRepository {
+public interface AluguelRepository {
+
+    
 }
