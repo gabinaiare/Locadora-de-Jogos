@@ -3,6 +3,9 @@ package br.com.locadora.model;
 import java.time.LocalDate;
 import java.time.Period;
 
+/** Por enquanto fiz os atributos e apliquei o encapsulamento
+ *  Ainda não realizei testes então é possível haver erros
+*/
 public class Cliente {
     private String nome;
     private String cpf;
@@ -49,16 +52,19 @@ public class Cliente {
     }
 
     // SETTERS
+    public void setNome(String novoNome){
+        if (novoNome != null && !novoNome.trim().isEmpty()){
+            this.nome = novoNome;
+        } else {
+        throw new IllegalArgumentException("Nome não pode ser vazio."); 
+    }
+    }
     public void setEmail(String novoEmail){
         if (novoEmail != null && novoEmail.contains("@")){
             this.email = novoEmail;   
         }else{
             System.out.println("E-mail inválido!");
         }
-    }
-
-    public void setAtivo(boolean ativo){
-        this.ativo = ativo;
     }
 
     public void setDataNascimento(LocalDate novaData){
@@ -69,5 +75,9 @@ public class Cliente {
         }
 
         this.dataNascimento = novaData;
+    }
+
+    public void setAtivo(boolean ativo){
+        this.ativo = ativo;
     }
 }
