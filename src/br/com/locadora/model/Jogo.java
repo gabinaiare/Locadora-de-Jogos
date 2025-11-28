@@ -1,4 +1,4 @@
 package br.com.locadora.model;
 
-public class Jogo {
+public abstract class Jogo {
 }
