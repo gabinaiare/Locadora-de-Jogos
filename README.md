@@ -18,7 +18,7 @@ corretamente os quatro pilares da Programação Orientada a Objetos.
 O sistema deve possuir um menu de terminal para interagir com as funcionalidades.
 
 
-## 📋 Requisitos Obrigratórios
+## 📋 Requisitos Obrigatórios
 
 Este projeto deve satisfazer os seguintes pontos, demonstrando o uso correto dos quatro pilares da POO:
 
