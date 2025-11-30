@@ -7,8 +7,8 @@ public class Aluguel {
     // Relacionamento Cliente
     private Cliente cliente; 
     
-    // Relacionamento com Jogo. Pode ser uma lista se o aluguel 
-    //private Jogo jogo; 
+    // Relacionamento com Jogo
+    private Jogo jogo; 
     
     
     private LocalDate dataInicio;
