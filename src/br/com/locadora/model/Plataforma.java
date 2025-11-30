@@ -10,4 +10,15 @@ public class Plataforma {
         this.nome = nome;
         this.fabricante = fabricante;
     }
+
+    //Getters
+    public int getId() {
+        return id;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public String getFabricante() {
+        return fabricante;
+    }
 }
