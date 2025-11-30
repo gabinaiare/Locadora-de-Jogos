@@ -21,4 +21,25 @@ public class Plataforma {
     public String getFabricante() {
         return fabricante;
     }
+
+    //Setters
+    public void setId(int id){
+        if (id <=0 ){
+            throw new IllegalArgumentException("O ID deve ser maior que zero.");
+        }
+    }
+
+    public void setNome(String nome){
+        if (nome == null || nome.trim().isEmpty()){
+            throw new IllegalArgumentException("O nome da plataforma não pode ser vazio.");
+        }
+        this.nome = nome;
+    }
+
+    public void setFabricante(String fabricante){
+        if (fabricante == null || fabricante.trim().isEmpty()){
+            throw new IllegalArgumentException("O nome do fabricante não pode ser vazio.");
+        }
+        this.fabricante = fabricante;
+    }
 }
