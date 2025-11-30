@@ -42,4 +42,9 @@ public class Plataforma {
         }
         this.fabricante = fabricante;
     }
+
+    @Override
+    public String toString() {
+        return id + " - " + nome + " (" + fabricante + ")";
+    }
 }
