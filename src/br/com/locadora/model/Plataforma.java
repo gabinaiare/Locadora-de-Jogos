@@ -11,18 +11,20 @@ public class Plataforma {
         this.fabricante = fabricante;
     }
 
-    //Getters
+    // Getters
     public int getId() {
         return id;
     }
+
     public String getNome() {
         return nome;
     }
+    
     public String getFabricante() {
         return fabricante;
     }
 
-    //Setters
+    // Setters
     public void setId(int id){
         if (id <=0 ){
             throw new IllegalArgumentException("O ID deve ser maior que zero.");
