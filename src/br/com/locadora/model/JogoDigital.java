@@ -1,4 +1,4 @@
 package br.com.locadora.model;
 
-public class JogoDigital {
+public class JogoDigital extends Jogo {
 }
