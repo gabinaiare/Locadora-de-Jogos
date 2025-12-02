@@ -11,6 +11,14 @@ public class JogoFisico extends Jogo {
         this.estado = estado;
     }
 
+    public void setEstado(String estado){
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
     @Override
     public double CalcularValorAluguel(Aluguel aluguel){
         long dias = ChronoUnit.DAYS.between(aluguel.getDataAluguel(), aluguel.getDataDevolucao());
