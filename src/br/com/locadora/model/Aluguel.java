@@ -23,16 +23,15 @@ public class Aluguel {
             if (dataDevolucao.isBefore(dataAluguel)) {
                 throw new IllegalArgumentException("Data de devolução não pode ser antes da data de aluguel.");
             }
+            
+                    this.cliente = cliente;
+                    this.jogos = jogos;
+                    this.dataAluguel = dataAluguel;
+                    this.dataDevolucao = dataDevolucao;
+                    this.valorTotal = 0.0;
+            
+                    recalcularValorTotal();
         }
-
-        this.cliente = cliente;
-        this.jogos = jogos;
-        this.dataAluguel = dataAluguel;
-        this.dataDevolucao = dataDevolucao;
-        this.valorTotal = 0.0;
-
-        recalcularValorTotal();
-    }
 
     //Getters. Só pegam valores, não alteram nada
 
@@ -55,4 +54,5 @@ public class Aluguel {
     public Double getValorTotal() {
         return valorTotal;
     }
+}
     
