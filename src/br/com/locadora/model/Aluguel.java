@@ -54,5 +54,16 @@ public class Aluguel {
     public Double getValorTotal() {
         return valorTotal;
     }
+
+  public void recalcularValorTotal() {
+    double total = 0.0;
+    for (Jogo jogo : jogos) {
+        // Chama o método que agora retorna um valor double
+        total += jogo.CalcularValorAluguel(this); 
+    }
+    this.valorTotal = total;
+}
+
+
 }
     

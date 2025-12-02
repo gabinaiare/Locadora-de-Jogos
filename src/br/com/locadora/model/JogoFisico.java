@@ -12,7 +12,7 @@ public class JogoFisico extends Jogo {
     }
 
     @Override
-    public void CalcularValorAluguel(Aluguel aluguel){
+    public double CalcularValorAluguel(Aluguel aluguel){
         long dias = ChronoUnit.DAYS.between(aluguel.getDataAluguel(), aluguel.getDataDevolucao());
         
         double valorDia = 5.0; 

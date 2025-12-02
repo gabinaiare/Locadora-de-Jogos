@@ -8,8 +8,8 @@ public abstract class Jogo {
     private String tipo;
     private float valorBase;
 
-    public abstract void CalcularValorAluguel(Aluguel aluguel);
-
+   // public abstract void CalcularValorAluguel(Aluguel aluguel);
+   public abstract double CalcularValorAluguel(Aluguel aluguel); // Mudar de 'void' para 'double'
     public Jogo(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase){
         this.nome = nome;
         this.anoLancamento = anoLancamento;
