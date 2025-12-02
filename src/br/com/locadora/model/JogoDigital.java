@@ -36,5 +36,11 @@ public class JogoDigital extends Jogo {
         
         return valorFinal;
     }
+    @Override
+    public String toString() {
+        return super.toString() + 
+               "\nPlataforma: " + plataforma +
+               "\nTamanho: " + tamanhoArquivo + " GB";
+    }
 
 }
