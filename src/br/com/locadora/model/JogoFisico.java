@@ -17,7 +17,7 @@ public class JogoFisico extends Jogo {
         
         double valorDia = 5.0; 
         
-        System.out.print("Valor final: " + dias * valorDia);
+        return valorDia * dias;
     }
 
     @Override
