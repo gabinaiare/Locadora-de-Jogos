@@ -9,5 +9,21 @@ public class JogoDigital extends Jogo {
         this.plataforma = plataforma;
         this.tamanhoArquivo = tamanhoArquivo;
     }
+  public String getPlataforma() {
+        return plataforma;
+    }
+
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
+    }
+
+    public double getTamanhoArquivo() {
+        return tamanhoArquivo;
+    }
+
+    public void setTamanhoArquivo(double tamanhoArquivo) {
+        this.tamanhoArquivo = tamanhoArquivo;
+    }
+    
 
 }
