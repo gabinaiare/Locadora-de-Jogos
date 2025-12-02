@@ -1,28 +1,12 @@
 package br.com.locadora.model;
 
-public class Aluguel {
-    // Identificador único do aluguel
-    private int id; 
-    
-    // Relacionamento Cliente
-    private Cliente cliente; 
-    
-    // Relacionamento com Jogo
-    private Jogo jogo; 
-    
-    
-    private LocalDate dataInicio;
-    private LocalDate dataDevolucaoPrevista;
-    private LocalDate dataDevolucaoReal; // Pode ser null se ainda não devolvido
-    
-    
-    private double valorTotal;
-    private boolean isAtivo;
+import java.time.LocalDate;
+import java.util.List;
 
-    
-    // Método de Negócio Exemplo:
-    public boolean isAluguelAtivo() {
-        // Um aluguel está ativo se a data de devolução real for nula 
-        // e/ou a data prevista ainda não foi atingida.
-        return dataDevolucaoReal == null;
+public class Aluguel {
+    private Cliente cliente;
+    private List<Jogo> jogos;
+    private LocalDate dataAluguel;
+    private LocalDate dataDevolucao;
+    private Double valorTotal;
 }
