@@ -24,4 +24,35 @@ public class Aluguel {
                 throw new IllegalArgumentException("Data de devolução não pode ser antes da data de aluguel.");
             }
         }
-}
+
+        this.cliente = cliente;
+        this.jogos = jogos;
+        this.dataAluguel = dataAluguel;
+        this.dataDevolucao = dataDevolucao;
+        this.valorTotal = 0.0;
+
+        recalcularValorTotal();
+    }
+
+    //Getters. Só pegam valores, não alteram nada
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public List<Jogo> getJogos() {
+        return jogos; 
+    }
+
+    public LocalDate getDataAluguel() {
+        return dataAluguel;
+    }
+
+    public LocalDate getDataDevolucao() {
+        return dataDevolucao;
+    }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+    
