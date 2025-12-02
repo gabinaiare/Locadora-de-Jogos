@@ -68,4 +68,12 @@ public abstract class Jogo {
         return valorBase;
     }
     
+    public String toString(){
+        return "\nNome: " + nome +
+                "\nAno de lançamento: " + anoLancamento +
+                "\nClassificação: " + classificacao +
+                "\nDescrição: " + descricao +
+                "\nTipo: " + tipo +
+                "\nValor base: " + valorBase;
+    }
 }
