@@ -41,3 +41,39 @@ public class MenuCliente{
             }
         } while (opcao != 0);
     }
+    public void criarCliente() {
+      try{
+        System.out.println("\n==== Criar Cliente ====");
+        System.out.print("Nome: ");
+        String nome = sc.nextLine();
+
+        System.out.print("CPF: ");
+        String cpf = sc.nextLine();
+
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+
+        System.out.print("Data de Nascimento (YYYY-MM-DD): ");
+        LocalDate data = LocalDate.parse(sc.nextLine());
+
+        service.criarCliente(nome, cpf, data, email);
+        System.out.println("Cliente criado com sucesso!\n");
+      } catch (Exception e){
+        System.out.println("Erro ao criar cliente: " + e.getMessage() + "\n");
+      }
+    }
+
+    private void listarClientes() {
+        System.out.println("\n==== Lista de Clientes ====");
+        List<Cliente> clientes = service.buscarTodosClientes();
+
+        if (clientes.isEmpty()) {
+            System.out.println("Nenhum cliente cadastrado.\n");
+            return;
+        }
+        for (Cliente c : clientes) {
+            System.out.println("Nome: " + c.getNome() + "| CPF: " + c.getCpf());
+        }
+        System.out.println();
+    }
+}
