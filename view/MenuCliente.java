@@ -41,6 +41,7 @@ public class MenuCliente{
             }
         } while (opcao != 0);
     }
+    
     public void criarCliente() {
       try{
         System.out.println("\n==== Criar Cliente ====");
@@ -75,5 +76,68 @@ public class MenuCliente{
             System.out.println("Nome: " + c.getNome() + "| CPF: " + c.getCpf());
         }
         System.out.println();
+    }
+
+     private void buscarClientePorCpf() {
+        System.out.println("\n==== Buscar Cliente por CPF ====");
+        System.out.print("Digite o CPF: ");
+        String cpf = sc.nextLine();
+
+        Cliente cliente = service.buscarClientePorCpf(cpf);
+
+        if (cliente != null) {
+            System.out.println("\n==== Dados do Cliente ====");
+            System.out.println("Nome: " + cliente.getNome());
+            System.out.println("Idade: " + cliente.getIdade());
+            System.out.println("Email: " + cliente.getEmail());
+            System.out.println();
+        } else {
+            System.out.println("Cliente não encontrado.\n");
+        }
+    }
+
+    private void atualizarCliente() {
+        try{
+            System.out.println("\n==== Atualizar Cliente ====");
+            System.out.print("Digite o CPF do cliente a ser atualizado: ");
+            String cpf = sc.nextLine();
+
+            Cliente cliente = service.buscarClientePorCpf(cpf);
+            if (cliente == null) {
+                System.out.println("Cliente não encontrado.\n");
+                return;
+            }
+
+            System.out.print("Novo Nome (enter para manter o atual): ");
+            String novoNome = sc.nextLine();
+            if (novoNome.isBlank()) novoNome = null;
+
+            System.out.print("Novo Email (enter para manter o atual): ");
+            String novoEmail = sc.nextLine();
+            if (novoEmail.isBlank()) novoEmail = null;
+
+            System.out.print("Nova Data de Nascimento (YYYY-MM-DD) (enter para manter a atual): ");
+            String inputData = sc.nextLine();
+            LocalDate novaData = inputData.isBlank() ? null : LocalDate.parse(inputData);
+
+            service.atualizarCliente(cpf, novoNome, novoEmail, novaData, null);
+            System.out.print("Dados atualizados com sucesso!\n");
+    } catch (Exception e){
+        System.out.println("Erro ao atualizar cliente: " + e.getMessage() + "\n");
+    }
+}
+
+    private void deletarCliente() {
+        try{
+
+            System.out.println("\n==== Deletar Cliente ====");
+            System.out.print("Digite o CPF do cliente a ser deletado: ");
+            String cpf = sc.nextLine();
+
+            service.deletarCliente(cpf);
+            System.out.println("Cliente deletado com sucesso!\n");
+        } catch (Exception e){
+            System.out.println("Erro ao deletar cliente: " + e.getMessage() + "\n");
+        }
     }
 }
