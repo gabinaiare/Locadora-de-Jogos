@@ -4,6 +4,7 @@ import br.com.locadora.model.Cliente;
 import br.com.locadora.interfaces.ICliente;
 import java.time.LocalDate;
 import java.util.List;
+import java.time.Period;
 
 public class ClienteService {
     private final ICliente ClienteRepository;
@@ -30,8 +31,7 @@ public class ClienteService {
             throw new IllegalArgumentException("Email inválido.");
         }
 
-        Cliente cliente = new Cliente(nome, cpf, email);
-        cliente.setDataDeNascimento(data);
+        Cliente cliente = new Cliente(nome, cpf, data, email);
         ClienteRepository.criarCliente(cliente);
     }
 
@@ -42,23 +42,24 @@ public class ClienteService {
         if (cliente == null) {
             throw new IllegalArgumentException("Cliente não encontrado.");
         }
-        // Atulizar nome, email, data de nascimento e status
+        // Atualizar nome, email, data de nascimento e status
         if (novoNome != null) cliente.setNome(novoNome);
         if (novoEmail != null) cliente.setEmail(novoEmail);
-        if (novaData != null) cliente.setDataDeNascimento(novaData);
+        if (novaData != null) cliente.setDataNascimento(novaData);
         if (ativo != null) cliente.setAtivo(ativo);
-
-        ClienteRepository.atualizar(cliente);
     }
 
+    // Buscar cliente por CPF
     public Cliente buscarClientePorCpf(String cpf) {
         return ClienteRepository.buscarCpf(cpf);
     }
 
+    // Buscar todos os clientes
     public List<Cliente> buscarTodosClientes() {
         return ClienteRepository.buscarTodos();
     }
 
+    // Deletar cliente
     public void deletarCliente(String cpf) {
         Cliente c = ClienteRepository.buscarCpf(cpf);
         if (c == null) {
@@ -67,6 +68,7 @@ public class ClienteService {
         ClienteRepository.deletarCliente(cpf);
     }
 
+    // Calcular idade
     private int calcularIdade(LocalDate dataNascimento){
         return Period.between(dataNascimento, LocalDate.now()).getYears();
     }
