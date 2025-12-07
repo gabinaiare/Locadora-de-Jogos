@@ -1,7 +1,7 @@
 package br.com.locadora.repository;
 
 import br.com.locadora.model.Cliente;
-import br.com.locadora.interface.ICliente;
+import br.com.locadora.interfaces.ICliente;
 
 import java.util.ArrayList;
 import java.util.List;

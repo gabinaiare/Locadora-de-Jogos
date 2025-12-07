@@ -1,4 +1,4 @@
-package br.com.locadora.interface;
+package br.com.locadora.interfaces;
 
 import br.com.locadora.model.Cliente;
 import java.util.List;
