@@ -4,10 +4,10 @@ import java.time.temporal.ChronoUnit;
 
 public class JogoFisico extends Jogo {
 
-    public String estado;
+    private String estado;
 
-    public JogoFisico(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase, String estado){
-        super(nome, anoLancamento, classificacao, descricao, tipo, valorBase);
+    public JogoFisico(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase, String estado, int id){
+        super(nome, anoLancamento, classificacao, descricao, tipo, valorBase,id);
         this.estado = estado;
     }
 

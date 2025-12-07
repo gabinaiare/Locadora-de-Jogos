@@ -1,5 +1,5 @@
 package br.com.locadora.repository;
 
-public class JogoRepoMemory implements JogoRepository{
+public class JogoRepoMemory implements IJogoRepository{
     
 }
