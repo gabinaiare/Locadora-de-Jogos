@@ -57,13 +57,16 @@ public class Cliente {
             this.nome = novoNome;
         } else {
         throw new IllegalArgumentException("Nome não pode ser vazio."); 
+        }
     }
-    }
+    
+    //fatal o set cpf
+    
     public void setEmail(String novoEmail){
         if (novoEmail != null && novoEmail.contains("@")){
             this.email = novoEmail;   
         }else{
-            System.out.println("E-mail inválido!");
+            throw new IllegalArgumentException("E-mail inválido."); 
         }
     }
 

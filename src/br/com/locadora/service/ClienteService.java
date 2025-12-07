@@ -1,4 +1,6 @@
 package br.com.locadora.service;
 
-public class ClienteService {
+public class ClienteService implements ICliente {
+
+    //Implementar os métodos de cliente aqui
 }
