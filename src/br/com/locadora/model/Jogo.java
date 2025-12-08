@@ -8,10 +8,13 @@ public abstract class Jogo {
     private String descricao;
     private String tipo;
     private float valorBase;
+    private Plataforma plataforma;
 
-   // public abstract void CalcularValorAluguel(Aluguel aluguel);
-   public abstract double CalcularValorAluguel(Aluguel aluguel); // Mudar de 'void' para 'double'
-    public Jogo(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase, int id){
+    // public abstract void CalcularValorAluguel(Aluguel aluguel);
+    public abstract double CalcularValorAluguel(Aluguel aluguel); // Mudar de 'void' para 'double'
+
+    public Jogo(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase,
+            int id, Plataforma plataforma) {
         this.nome = nome;
         this.anoLancamento = anoLancamento;
         this.classificacao = classificacao;
@@ -19,14 +22,23 @@ public abstract class Jogo {
         this.tipo = tipo;
         this.valorBase = valorBase;
         this.id = id;
+        this.plataforma = plataforma;
 
     }
 
-    public void setId(int id){
+    public void setPlataforma(Plataforma plataforma) {
+        this.plataforma = plataforma;
+    }
+
+    public Plataforma getPlataforma() {
+        return plataforma;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 
@@ -77,11 +89,12 @@ public abstract class Jogo {
     public float getValorBase() {
         return valorBase;
     }
-    
-    public String toString(){
+
+    public String toString() {
         return "\nId: " + id +
                 "\nNome: " + nome +
                 "\nAno de lançamento: " + anoLancamento +
+                "\nPlataforma: " + plataforma +
                 "\nClassificação: " + classificacao +
                 "\nDescrição: " + descricao +
                 "\nTipo: " + tipo +
