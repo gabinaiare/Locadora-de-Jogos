@@ -15,7 +15,7 @@ public class Main {
         LocadoraService service = new LocadoraService();
      
         Cliente cli1 = new Cliente("Maria Silva", "123.456.789-00", LocalDate.of(1990, 5, 10), "maria@email.com");
-        Jogo jogoD1 = new JogoDigital("Cyberpunk", 2020, 18, "RPG futurista", "Digital", 10.0f, "PC", 70.0,2);
+        Jogo jogoD1 = new JogoDigital("Cyberpunk", 2020, 18, "RPG futurista", "Digital", 10.0f, 70.0, 2, null);
         
         List<Jogo> listaJogos = Arrays.asList(jogoD1);
         
