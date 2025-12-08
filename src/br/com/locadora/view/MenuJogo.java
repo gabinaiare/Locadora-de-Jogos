@@ -21,6 +21,31 @@ public class MenuJogo {
         this.clienteService = clienteService;
         this.locadoraService = locadoraService;
     }
+    
+    public void exibirMenu() {
+        int opcao;
+        do {
+            System.out.println("\n==== MENU JOGO ====");
+            System.out.println("1. Cadastrar Jogo");
+            System.out.println("2. Listar Jogos");
+            System.out.println("3. Buscar Jogo por ID");
+            System.out.println("4. Alugar Jogo");
+            System.out.println("5. Listar Aluguéis");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = Integer.parseInt(input.nextLine());
 
+            switch (opcao) {
+                case 1 -> cadastrarJogo();
+                case 2 -> listarJogos();
+                case 3 -> buscarPorId();
+                case 4 -> alugarJogo();
+                case 5 -> listarAlugueis();
+                case 0 -> System.out.println("Saindo do menu jogo.");
+                default -> System.out.println("Opção inválida!");
+            }
+
+        } while (opcao != 0);
+    }
     
 }
