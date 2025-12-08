@@ -3,21 +3,14 @@ package br.com.locadora.model;
 import java.time.temporal.ChronoUnit;
 
 public class JogoDigital extends Jogo {
-    private String plataforma;
+ 
     private double tamanhoArquivo; 
 
-    public JogoDigital(String nome,int anoLancamento,int classificacao,String descricao,String tipo,float valorBase, String plataforma, double tamanhoArquivo, int id) {
-        super(nome,anoLancamento,classificacao,descricao,tipo,valorBase,id);
-        this.plataforma = plataforma;
-        this.tamanhoArquivo = tamanhoArquivo;
+  public JogoDigital(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase, double tamanhoArquivo, int id, Plataforma plataforma) { // Argumentos ajustados
+         super(nome, anoLancamento, classificacao, descricao, tipo, valorBase, id, plataforma); 
+         this.tamanhoArquivo = tamanhoArquivo;
     }
-  public String getPlataforma() {
-        return plataforma;
-    }
-
-    public void setPlataforma(String plataforma) {
-        this.plataforma = plataforma;
-    }
+ 
 
     public double getTamanhoArquivo() {
         return tamanhoArquivo;
@@ -39,7 +32,6 @@ public class JogoDigital extends Jogo {
     @Override
     public String toString() {
         return super.toString() + 
-               "\nPlataforma: " + plataforma +
                "\nTamanho: " + tamanhoArquivo + " GB";
     }
 
