@@ -1,4 +1,4 @@
-package br.com.locadora.repository;
+package br.com.locadora.interfaces;
 
 import java.util.List;
 import br.com.locadora.model.Jogo;
@@ -6,7 +6,7 @@ import br.com.locadora.model.JogoFisico;
 import br.com.locadora.model.JogoDigital;
 import br.com.locadora.model.Plataforma;
 
-public interface IJogoRepository {
+public interface IJogo {
 
     void salvar(Jogo jogo);
     Jogo buscarPorId(int id);

@@ -6,12 +6,13 @@ public class JogoFisico extends Jogo {
 
     private String estado;
 
-    public JogoFisico(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase, String estado, int id){
-        super(nome, anoLancamento, classificacao, descricao, tipo, valorBase,id);
+    public JogoFisico(String nome, int anoLancamento, int classificacao, String descricao, String tipo, float valorBase,
+            String estado, int id, Plataforma plataforma) {
+        super(nome, anoLancamento, classificacao, descricao, tipo, valorBase, id, plataforma);
         this.estado = estado;
     }
 
-    public void setEstado(String estado){
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
@@ -20,16 +21,16 @@ public class JogoFisico extends Jogo {
     }
 
     @Override
-    public double CalcularValorAluguel(Aluguel aluguel){
+    public double CalcularValorAluguel(Aluguel aluguel) {
         long dias = ChronoUnit.DAYS.between(aluguel.getDataAluguel(), aluguel.getDataDevolucao());
-        
-        double valorDia = 5.0; 
-        
+
+        double valorDia = 5.0;
+
         return valorDia * dias;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return super.toString() + "\nEstado: " + estado;
     }
 
