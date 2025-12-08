@@ -29,6 +29,7 @@ public class Plataforma {
         if (id <=0 ){
             throw new IllegalArgumentException("O ID deve ser maior que zero.");
         }
+        this.id = id;
     }
 
     public void setNome(String nome){
