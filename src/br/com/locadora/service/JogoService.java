@@ -44,6 +44,40 @@ public class JogoService {
         }
 
         salvar(jogo);
+        
+    }
+     public Jogo buscarPorId(int id) {
+        return jogoRepository.buscarPorId(id);
+    }
+
+    public List<Jogo> listarJogos() {
+        return jogoRepository.buscarTodos();
+    }
+
+   
+    public void deletarJogo(int id) {
+        if (jogoRepository.buscarPorId(id) == null) {
+            throw new IllegalArgumentException("Jogo não encontrado!");
+        }
+        jogoRepository.remover(id);
+    }
+
+    public List<Jogo> buscarPorNome(String nome) {
+        return jogoRepository.buscarPorNome(nome);
+    }
+
+   
+    public List<Jogo> buscarPorPlataforma(Plataforma plataforma) {
+        return jogoRepository.buscarPorPlataforma(plataforma);
+    }
+
+   
+    public void registrarAluguel(Aluguel aluguel) {
+        alugueis.add(aluguel);
+    }
+
+    public List<Aluguel> listarAlugueis() {
+        return alugueis;
     }
 
    
