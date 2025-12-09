@@ -7,8 +7,8 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/Status-Desenvolvimento-yellow)
-![Linguagem C](https://img.shields.io/badge/Linguagem-Java-blue)
+![Status](https://img.shields.io/badge/Status-Concluído-green)
+![Linguagem C](https://img.shields.io/badge/Linguagem-Java-orange)
 
 </div>
 
@@ -27,19 +27,99 @@ Este projeto deve satisfazer os seguintes pontos, demonstrando o uso correto dos
 * Abstração (O Essencial vs. a Complexidade)
 * Polimorfismo (Muitas Formas, Uma Interface)
 
-### 🖥️ Funcionalidades Mínimas do Terminal
+### Hierarquia de pastas
+```python
+.
+├── LICENSE
+├── README.md
+└── src
+    └── br
+        └── com
+            └── locadora
+                ├── app
+                │   └── Main.java
+                ├── interfaces
+                │   ├── IAluguel.java
+                │   ├── ICliente.java
+                │   └── IJogo.java
+                ├── model
+                │   ├── Aluguel.java
+                │   ├── Cliente.java
+                │   ├── JogoDigital.java
+                │   ├── JogoFisico.java
+                │   ├── Jogo.java
+                │   └── Plataforma.java
+                ├── repository
+                │   ├── AluguelRepoMemory.java
+                │   ├── ClienteRepository.java
+                │   └── JogoRepoMemory.java
+                ├── service
+                │   ├── ClienteService.java
+                │   ├── JogoService.java
+                │   └── LocadoraService.java
+                └── view
+                    ├── MenuCliente.java
+                    └── MenuJogo.java
 
-O menu principal deve ser unificado e permitir, obrigatoriamente:
+```
 
-1.  Criar objetos
-2.  Listar os objetos
-3.  Buscar ou interagir com um objeto específico.
-4.  Sair do programa.
-5.  Além disso, deve conter pelo menos **quatro** funcionalidades inerentes ao projeto escolhido pelo grupo.
+### 🖥️ Funcionalidades do terminal
 
+Opções disponíveis:
+
+```
+===== LOCADORA DE JOGOS =====
+1. Menu Cliente
+2. Menu Jogo
+0. Sair
+Escolha: 
+
+```
+#### Menu cliente:
+```
+==== MENU CLIENTE ====
+1. Criar Cliente
+2. Listar Clientes
+3. Buscar Cliente por CPF
+4. Atualizar Cliente
+5. Deletar Cliente
+0. Sair
+Escolha uma opção: 
+```
+#### Menu jogo:
+```
+==== MENU JOGO ====
+1. Cadastrar Jogo
+2. Listar Jogos
+3. Buscar Jogo por ID
+4. Alugar Jogo
+5. Listar Aluguéis
+0. Sair
+Escolha uma opção: 
+```
+
+### Como rodar a aplicação
+No terminal, clone o repositório do projeto:
+```
+git clone https://github.com/gabinaiare/Locadora-de-Jogos.git
+```
+
+Entre na pasta do projeto
+```
+cd Locadora-de-Jogos
+```
+Compile os arquivos Java
+```
+javac -d bin src/br/com/locadora/**/*.java
+```
+
+Execute a aplicação
+```
+java -cp bin br.com.locadora.app.Main
+```
 
 ## 🧑‍💻 Desenvolvedores
 
-| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/157031016?v=4" width="115"><br><sub> Gabrielle Naiare </sub>](https://github.com/gabinaiare) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/115113727?v=4" width="115"><br><sub> Jennefhy Saiury </sub>](https://github.com/jennefhy) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/106347376?v=4" width="115"><br><sub> Alice Pinheiro </sub>](https://github.com/AliceSantoi) |
+|  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/157031016?v=4" width="115"><br><sub>Gabrielle Naiare Pereira de Oliveira<br>2023022665</sub>](https://github.com/gabinaiare) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/115113727?v=4" width="115"><br><sub> Jennefhy Saiury de Lima Pontes<br> 2024010522</sub>](https://github.com/jennefhy) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/106347376?v=4" width="115"><br><sub> Alice dos Santos Pinheiro <br> 	2023022668</sub>](https://github.com/AliceSantoi) |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/171264485?v=4" width="115"><br><sub> Pedro Victor </sub>](https://github.com/pedrokaut) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/186582235?v=4" width="115"><br><sub> Pablo Ryan </sub>](https://github.com/Ryan-loyer) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/218805338?v=4" width="115"><br><sub> Pedro Lucas </sub>](https://github.com/pedrocordeiro-l) |
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/171264485?v=4" width="115"><br><sub> Pedro Victor Soares Gonçalo <br> 2024010454 </sub>](https://github.com/pedrokaut) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/186582235?v=4" width="115"><br><sub> Pablo Ryan Lopes Vieira <br> 2024010361</sub>](https://github.com/Ryan-loyer) | 
