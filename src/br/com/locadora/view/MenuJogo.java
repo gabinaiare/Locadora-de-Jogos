@@ -1,8 +1,8 @@
 package br.com.locadora.view;
 
 import br.com.locadora.model.*;
-import br.com.locadora.service.JogoService;
 import br.com.locadora.service.ClienteService;
+import br.com.locadora.service.JogoService;
 import br.com.locadora.service.LocadoraService;
 import java.time.LocalDate;
 import java.util.List;
@@ -159,5 +159,3 @@ public class MenuJogo {
         alugueis.forEach(System.out::println);
     }
 }
-
-

@@ -1,9 +1,9 @@
-package br.com.locadora.repository;
+package br.com.locadora.interfaces;
 
 import br.com.locadora.model.Aluguel;
 import java.util.List;
 
-public interface AluguelRepository {
+public interface IAluguel {
 
     void salvar(Aluguel aluguel);
     List<Aluguel> listarTodos();

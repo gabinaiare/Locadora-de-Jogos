@@ -1,13 +1,12 @@
 package br.com.locadora.repository;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.locadora.interfaces.IJogo;
-import br.com.locadora.model.Plataforma;
-import br.com.locadora.model.JogoFisico;
 import br.com.locadora.model.Jogo;
 import br.com.locadora.model.JogoDigital;
+import br.com.locadora.model.JogoFisico;
+import br.com.locadora.model.Plataforma;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JogoRepoMemory implements IJogo {
     private List<Jogo> jogos = new ArrayList<>();

@@ -1,14 +1,14 @@
 package br.com.locadora.service;
 
+import br.com.locadora.interfaces.IAluguel;
 import br.com.locadora.model.Aluguel;
-import br.com.locadora.repository.AluguelRepository;
 import java.util.List;
 
 public class LocadoraService {
 
-    private final AluguelRepository aluguelRepository;
+    private final IAluguel aluguelRepository;
 
-    public LocadoraService(AluguelRepository aluguelRepository) {
+    public LocadoraService(IAluguel aluguelRepository) {
         this.aluguelRepository = aluguelRepository;
     }
 
