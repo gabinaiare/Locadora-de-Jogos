@@ -75,4 +75,21 @@ public class Aluguel {
         }
         this.valorTotal = total;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder jogosStr = new StringBuilder();
+        for (Jogo j : jogos) {
+            jogosStr.append(j.getNome())
+                .append(" (R$ ")
+                .append(j.CalcularValorAluguel(this))
+                .append(")\n");
+        }
+        return "Cliente: " + cliente.getNome() +
+           "\nCPF: " + cliente.getCpf() +
+           "\nData do Aluguel: " + dataAluguel +
+           "\nData de Devolução: " + dataDevolucao +
+           "\nJogos:\n" + jogosStr.toString() +
+           "Valor Total: R$ " + valorTotal;
+    }
 }

@@ -1,10 +1,11 @@
 package br.com.locadora.repository;
 
+import br.com.locadora.interfaces.IAluguel;
 import br.com.locadora.model.Aluguel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AluguelRepoMemory implements AluguelRepository{
+public class AluguelRepoMemory implements IAluguel{
 
     private static final List<Aluguel> ALUGUEIS = new ArrayList<>();
 
