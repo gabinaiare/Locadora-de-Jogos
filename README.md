@@ -13,7 +13,7 @@
 </div>
 
 ## 📄 Sobre o Projeto
-Desenvolver um sistema de terminal que, independentemente do tema escolhido, deve aplicar
+É um sistema de terminal de uma Locadora de Jogos, que deve aplicar
 corretamente os quatro pilares da Programação Orientada a Objetos.
 O sistema deve possuir um menu de terminal para interagir com as funcionalidades.
 
