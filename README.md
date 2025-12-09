@@ -92,8 +92,9 @@ Escolha uma opção:
 1. Cadastrar Jogo
 2. Listar Jogos
 3. Buscar Jogo por ID
-4. Alugar Jogo
-5. Listar Aluguéis
+4. Remover Jogo por ID
+5. Alugar Jogo
+6. Listar Aluguéis
 0. Sair
 Escolha uma opção: 
 ```
