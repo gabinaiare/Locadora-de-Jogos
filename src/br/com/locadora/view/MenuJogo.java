@@ -8,12 +8,11 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class MenuJogo {
-     private Scanner input;
-     private JogoService jogoService;
-     private ClienteService clienteService;
-     private LocadoraService locadoraService;
+    private Scanner input;
+    private JogoService jogoService;
+    private ClienteService clienteService;
+    private LocadoraService locadoraService;
 
     public MenuJogo(JogoService jogoService, ClienteService clienteService, LocadoraService locadoraService) {
         this.input = new Scanner(System.in);
@@ -21,7 +20,7 @@ public class MenuJogo {
         this.clienteService = clienteService;
         this.locadoraService = locadoraService;
     }
-    
+
     public void exibirMenu() {
         int opcao;
         do {
@@ -29,8 +28,9 @@ public class MenuJogo {
             System.out.println("1. Cadastrar Jogo");
             System.out.println("2. Listar Jogos");
             System.out.println("3. Buscar Jogo por ID");
-            System.out.println("4. Alugar Jogo");
-            System.out.println("5. Listar Aluguéis");
+            System.out.println("4. Remover Jogo por ID");
+            System.out.println("5. Alugar Jogo");
+            System.out.println("6. Listar Aluguéis");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = Integer.parseInt(input.nextLine());
@@ -39,15 +39,17 @@ public class MenuJogo {
                 case 1 -> cadastrarJogo();
                 case 2 -> listarJogos();
                 case 3 -> buscarPorId();
-                case 4 -> alugarJogo();
-                case 5 -> listarAlugueis();
+                case 4 -> deletarJogo();
+                case 5 -> alugarJogo();
+                case 6 -> listarAlugueis();
                 case 0 -> System.out.println("Saindo do menu jogo.");
                 default -> System.out.println("Opção inválida!");
             }
 
         } while (opcao != 0);
     }
-     private void cadastrarJogo() {
+
+    private void cadastrarJogo() {
         try {
             System.out.println("\n==== Cadastro de Jogo ====");
             System.out.print("Nome: ");
@@ -67,7 +69,7 @@ public class MenuJogo {
 
             System.out.print("Nome da plataforma: ");
             String platNome = input.nextLine();
-            Plataforma plataforma = new Plataforma(0, platNome, ""); 
+            Plataforma plataforma = new Plataforma(0, platNome, "");
 
             System.out.print("Tipo (Fisico/Digital): ");
             String tipo = input.nextLine();
@@ -108,11 +110,31 @@ public class MenuJogo {
 
             Jogo jogo = jogoService.buscarPorId(id);
 
-            if (jogo == null) System.out.println("Jogo não encontrado.");
-            else System.out.println("\n" + jogo + "\n");
+            if (jogo == null)
+                System.out.println("Jogo não encontrado.");
+            else
+                System.out.println("\n" + jogo + "\n");
 
         } catch (Exception e) {
             System.out.println("Erro na busca: " + e.getMessage());
+        }
+    }
+
+    private void deletarJogo() {
+        System.out.println("\n==== Remover Jogo ====");
+
+        try {
+            System.out.print("ID do jogo: ");
+            int id = Integer.parseInt(input.nextLine());
+
+            jogoService.deletarJogo(id);
+
+            System.out.println("Jogo removido com sucesso!");
+
+        } catch (NumberFormatException e) {
+            System.out.println("ID inválido! Digite um número inteiro.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 
